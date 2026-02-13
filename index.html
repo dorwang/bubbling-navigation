@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./main.css">
+   </head>
+   <body>
+      <nav>
+         <a href="#" class="link link-1">Home</a>
+         <a href="#" class="link link-2">Projects</a>
+         <a href="#" class="link link-3">Gallery</a>
+         <a href="#" class="link link-4">Studio</a>
+         <a href="#" class="link link-5">Profile</a>
+      </nav>
+      <div class="bubbles"></div>
+
+      
+      <script defer>
+         const links = document.querySelectorAll(".link");
+         console.log(links)
+
+         links.forEach((link) => {
+            link.addEventListener("click", () => {
+               links.forEach((l) => l.classList.remove("active"))
+               link.classList.add("active");
+            })
+         })
+      </script>
+   </body>
+</html>
