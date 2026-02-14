@@ -20,17 +20,26 @@ body {
 	font-family: "Lusitana", serif;
 	font-style: normal;
 }
-
-nav {
-	margin: 50px auto 0;
-	width: fit-content;
+.main-wrap {
 	padding: 5px;
+	width: fit-content;
+	margin: 50px auto 0;
 	border: 3px solid var(--light-gray);
 	border-radius: 50px;
+}
+.nav-wrap {
+	position: relative;
+	border-radius: 50px;
+	background-image: linear-gradient(0deg, var(--black), var(--gray));
+}
+nav {
+	position: relative;
 	anchor-name: --nav;
+	z-index: 2;
 }
 
 .link {
+	position: relative;
 	display: inline-block;
 	color: white;
 	text-decoration: none;
@@ -39,11 +48,18 @@ nav {
 	border-radius: 50px;
 	transition: all 0.3s ease;
 	line-height: 1;
+	z-index: 2;
+	&:before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-color: transparent;
+	}
 	&.active {
 		color: var(--black);
 		anchor-name: --active;
 	}
-	&:hover {
+	&:hover:before {
 		anchor-name: --nav;
 	}
 }
@@ -56,16 +72,16 @@ nav {
 	bottom: anchor(bottom);
 	border-radius: 50px;
 	transition: all 0.3s ease;
-	z-index: -1;
 	background-color: var(--white);
 
 	&.active {
 		position-anchor: --active;
+		z-index: 1;
 	}
 
 	&.hover {
 		background-color: var(--gray);
 		position-anchor: --nav;
-		z-index: -2;
+		z-index: 0;
 	}
 }
